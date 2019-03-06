@@ -22,6 +22,7 @@ class ComposerStaticInit30542c92adda976fb7dc7d0dc8e4e334
 
     public static $classMap = array (
         'App\\Controller\\FrontController' => __DIR__ . '/../..' . '/controller/FrontController.php',
+        'App\\Model\\CommentEntity' => __DIR__ . '/../..' . '/model/CommentEntity.php',
         'App\\Model\\CommentManager' => __DIR__ . '/../..' . '/model/CommentManager.php',
         'App\\Model\\DbConnect' => __DIR__ . '/../..' . '/model/DbConnect.php',
         'App\\Model\\PostEntity' => __DIR__ . '/../..' . '/model/PostEntity.php',

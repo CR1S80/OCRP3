@@ -1,5 +1,3 @@
-use 
-
 <?php $title = $post->getTitle(); ?>
 
 <?php ob_start(); ?>
@@ -33,7 +31,9 @@ use
     </div>
 </form>
 
-<?php foreach($comments as $comment): ?>
+<?php 
+ 
+foreach($comments as $comment): ?>
 
     <p><strong><?= $comment->getAuthor(); ?></strong> le <?= $comment->getComment_date(); ?></p>
     <p><?= $comment->getComment(); ?></p> 

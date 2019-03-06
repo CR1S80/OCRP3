@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controller\\FrontController' => $baseDir . '/controller/FrontController.php',
+    'App\\Model\\CommentEntity' => $baseDir . '/model/CommentEntity.php',
     'App\\Model\\CommentManager' => $baseDir . '/model/CommentManager.php',
     'App\\Model\\DbConnect' => $baseDir . '/model/DbConnect.php',
     'App\\Model\\PostEntity' => $baseDir . '/model/PostEntity.php',
