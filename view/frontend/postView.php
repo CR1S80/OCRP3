@@ -1,3 +1,4 @@
+use 
 
 <?php $title = $post->getTitle(); ?>
 
@@ -12,8 +13,7 @@
     </h3>
     
     <p>
-        <?php
-        echo $post->getContent(); ?>
+        <?= $post->getContent(); ?>
     </p>
 </div>
 
@@ -33,18 +33,23 @@
     </div>
 </form>
 
-<?php
-while ($comment = $comments->fetch())
-{
-?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p> 
-<?php
-}
-?>
+<?php foreach($comments as $comment): ?>
+
+    <p><strong><?= $comment->getAuthor(); ?></strong> le <?= $comment->getComment_date(); ?></p>
+    <p><?= $comment->getComment(); ?></p> 
+
+<?php endforeach; ?>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('view/frontend/template.php'); ?>
+
+
+
+
+
+
+
 
 
 

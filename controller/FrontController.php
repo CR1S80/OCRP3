@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\PostManager;
+use App\Model\CommentManager;
 
 
 
@@ -21,19 +22,24 @@ class FrontController {
         
         //$comments = getComments($_GET['id']);
 
-        include 'view/frontend/postView.php';
+        require 'view/frontend/postView.php';
     }
 
-    public function addComments($post_id, $author, $comment) {
+    public function getComments() {
+        
+        $manager = new CommentManager();
+        $comments = $manager->getCommentsFromSinglePost($_GET['id']);
+        
+        require 'view/frontend/postView.php';
 
-        $affectedLines = postComments($post_id, $author, $comment);
+        /*$affectedLines = postComments($post_id, $author, $comment);
 
         if ($affectedLines === false) {
 
             die('Impossible d\'ajouter ce commentaire');
         } else {
             header('Location: index.php?action=post&id=' . $post_id);
-        }
+        }*/
     }
 
 }
