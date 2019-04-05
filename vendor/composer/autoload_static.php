@@ -21,11 +21,16 @@ class ComposerStaticInit30542c92adda976fb7dc7d0dc8e4e334
     );
 
     public static $classMap = array (
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/controller/AdminController.php',
         'App\\Controller\\FrontController' => __DIR__ . '/../..' . '/controller/FrontController.php',
+        'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/controller/SecurityController.php',
+        'App\\Model\\CommentEntity' => __DIR__ . '/../..' . '/model/CommentEntity.php',
         'App\\Model\\CommentManager' => __DIR__ . '/../..' . '/model/CommentManager.php',
         'App\\Model\\DbConnect' => __DIR__ . '/../..' . '/model/DbConnect.php',
         'App\\Model\\PostEntity' => __DIR__ . '/../..' . '/model/PostEntity.php',
         'App\\Model\\PostManager' => __DIR__ . '/../..' . '/model/PostManager.php',
+        'App\\Model\\UserEntity' => __DIR__ . '/../..' . '/model/UserEntity.php',
+        'App\\Model\\UserManager' => __DIR__ . '/../..' . '/model/UserManager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

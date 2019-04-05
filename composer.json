@@ -5,6 +5,7 @@
         "psr-0": {
             "App\\Model": "model/",
             "App\\Controller": "controller/"
+            
         }
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Model\PostManager;
+use App\Model\CommentManager;
+use App\Model\CommentEntity;
 
 
 
@@ -10,7 +12,7 @@ class FrontController {
 
     public function listPosts() {
         $manager = new PostManager();
-        $posts = $manager->getPosts();
+        $posts = $manager->getLastFivePosts();
 
         require('view/frontend/listPostsView.php');
     }
@@ -19,21 +21,28 @@ class FrontController {
         $manager = new PostManager();
         $post = $manager->getSinglePost($_GET['id']);
         
-        //$comments = getComments($_GET['id']);
+                
+        $manager = new CommentManager();
+        $comments = $manager->getCommentsFromSinglePost($_GET['id']);
+        
 
-        include 'view/frontend/postView.php';
+        require 'view/frontend/postView.php';
     }
 
-    public function addComments($post_id, $author, $comment) {
-
-        $affectedLines = postComments($post_id, $author, $comment);
-
-        if ($affectedLines === false) {
-
-            die('Impossible d\'ajouter ce commentaire');
-        } else {
-            header('Location: index.php?action=post&id=' . $post_id);
-        }
+    public function addComment($id, $author, $comment) {
+        
+        $comments = new CommentEntity();
+        $comments->setId($id)
+                 ->setAuthor($author)
+                 ->setComment($comment);
+        $commentManager = new CommentManager;
+        $commentManager->addComments($comments);
+        header('Location: index.php?action=post&id='.$id);
+       
+        
+        
     }
 
 }
+
+

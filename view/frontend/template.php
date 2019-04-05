@@ -7,6 +7,7 @@
     </head>
         
     <body>
+        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=login">Connexion</a>
         <?= $content ?>
     </body>
 </html>

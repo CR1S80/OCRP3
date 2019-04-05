@@ -14,12 +14,11 @@ class PostManager {
         $this->db = DbConnect::connect();
     }
 
-    public function getPosts() {
+    public function getLastFivePosts() {
 
         $req = $this->db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
          
-        return $req; 
-        
+        return $req;      
         
         
     }
@@ -36,6 +35,14 @@ class PostManager {
              ->setCreation_date($result['creation_date_fr']);
         return $post;
 
+        
+    }
+    
+    public function addPost () {
+        
+    }
+    
+    public function delPost() {
         
     }
 
