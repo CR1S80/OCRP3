@@ -41,6 +41,7 @@ class SecurityController {
             $_SESSION['admin'] = $result;
         }
         
+
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
         
         
@@ -52,6 +53,7 @@ class SecurityController {
         
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/');
         
+
     }
     
 }

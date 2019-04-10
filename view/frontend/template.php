@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,4 +23,5 @@
 
 <?= $content ?>
     </body>
+
 </html>

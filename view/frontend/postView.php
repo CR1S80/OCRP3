@@ -1,3 +1,4 @@
+
 <?php $title = $post->getTitle(); ?>
 
 <?php ob_start(); ?>
@@ -44,15 +45,3 @@ foreach($comments as $comment): ?>
 
 <?php require('view/frontend/template.php'); ?>
 
-
-
-
-
-
-
-
-
-
-
-
-    

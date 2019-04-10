@@ -1,3 +1,4 @@
+
 <?php
 //TEST//
 namespace App\Controller;
@@ -44,5 +45,4 @@ class FrontController {
     }
 
 }
-
 
