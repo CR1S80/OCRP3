@@ -18,13 +18,13 @@
 
 
     <p>
-    <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost" method="post">
+    
         <textarea rows="75" cols="90">
             <?= $post->getContent(); ?>
         </textarea>
         <BUTTON name="edit">Valider la modification</BUTTON>
-        <a href=""><BUTTON name="delete">Supprimer cet article</BUTTON></A>
-    </form>
+        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost&id=<?=$post->getId()?>"><BUTTON name="delete">Supprimer cet article</BUTTON></A>
+    
 </p>
 </div>
 
