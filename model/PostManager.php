@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Model;
@@ -47,17 +46,14 @@ class PostManager {
         ));
     }
 
-    public function editPost(PostEntity $entity) {
-        $post = $this->db->prepare('UPDATE posts set title = ?, content = ?');
-        return $post->execute(array($entity->getTitle(),
-                    $entity->getContent()
-        ));
+    public function editPost($id, $content, $title) {
+        $post = $this->db->prepare('UPDATE posts set title = ?, content = ? WHERE id=?');
+        return $post->execute(array($title, $content, $id));
     }
 
-    public function deletePost(PostEntity $entity) {
+    public function deletePost($postId) {
         $post = $this->db->prepare('DELETE FROM posts WHERE id=?');
-        return $post->execute(array($entity->getId(),
-        ));
+        return $post->execute(array($postId));
     }
 
 }

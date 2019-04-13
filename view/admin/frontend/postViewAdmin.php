@@ -11,21 +11,24 @@
 <p><a href="index.php?action=admin&amp;adminAction=home">Retour à la liste des billets</a></p>
 
 <div class="news">
-    <h3>
-        <?= $post->getTitle(); ?>
-        <em>le <?= $post->getCreation_date(); ?></em>
-    </h3>
+    <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
+        <h3>
+            <INPUT name="title" value="<?= $post->getTitle(); ?>">
+            <em>le <?= $post->getCreation_date(); ?></em>
+        </h3>
 
 
-    <p>
-    
-        <textarea rows="75" cols="90">
+
+
+        <textarea name="content" rows="75" cols="90">
             <?= $post->getContent(); ?>
         </textarea>
-        <BUTTON name="edit">Valider la modification</BUTTON>
-        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost&id=<?=$post->getId()?>"><BUTTON name="delete">Supprimer cet article</BUTTON></A>
+        <BUTTON>Valider la modification</BUTTON></form>
+        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost&id=<?= $post->getId() ?>"><BUTTON name="delete">Supprimer cet article</BUTTON></A>
     
-</p>
+
+
+
 </div>
 
 <h2>Commentaires</h2>

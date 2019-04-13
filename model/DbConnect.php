@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Model;
@@ -17,4 +16,3 @@ class DbConnect {
     }
 
 }
-

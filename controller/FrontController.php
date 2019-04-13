@@ -1,6 +1,5 @@
-
 <?php
-//TEST//
+
 namespace App\Controller;
 
 use App\Model\PostManager;

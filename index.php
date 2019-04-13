@@ -1,6 +1,6 @@
-
 <?php
-if (!isset ($_SESSION)) {
+
+if (!isset($_SESSION)) {
     session_start();
 }
 
@@ -44,25 +44,23 @@ if (isset($_GET['action'])) {
             if (isset($_GET['adminAction'])) {
                 if ($_GET['adminAction'] == 'home') {
                     $adminController->home();
-                } 
-                elseif ($_GET['adminAction'] == 'edit') {
+                } elseif ($_GET['adminAction'] == 'view') {
+
+                    $adminController->viewPost();
+                } elseif ($_GET['adminAction'] == 'editPost') {
                     
-                    $adminController->editPost();
+                    $adminController->editPost($_GET['id'], $_POST['content'], $_POST['title']);
+                } elseif ($_GET['adminAction'] == 'addPost') {
+
+                    $postManager->postForm();
+                } elseif ($_GET['adminAction'] == 'add') {
+
+                    $adminController->addPost($_POST['title'], $_POST['content']);
+                } elseif ($_GET['adminAction'] == 'deletePost') {
+
+                    $adminController->deletePost($_GET['id']);
                 }
-                elseif ($_GET['adminAction'] == 'addPost') {
-                    
-                    $postManager->postForm ();
-                
-            } elseif ($_GET['adminAction'] == 'add') {
-                
-                $adminController->addPost($_POST['title'], $_POST['content']);
-            
-        } elseif ($_GET['adminAction'] == 'deletePost') {
-            
-            $adminController->deletePost($_GET['id']);
-            
-        } 
-            } 
+            }
         } else {
 
             $securityController->loginForm();
@@ -75,12 +73,10 @@ if (isset($_GET['action'])) {
             if (!empty(trim($_POST['email']) && !empty(trim($_POST['password'])))) {
 
 
-                $securityController->checkForm($_POST['email'],$_POST['password']);
+                $securityController->checkForm($_POST['email'], $_POST['password']);
             }
         }
-    }
-    
-    elseif ($_GET['action'] == 'logout') {
+    } elseif ($_GET['action'] == 'logout') {
         $securityController->logout();
     }
 } else {

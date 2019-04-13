@@ -1,4 +1,3 @@
-
 <?php
 
 /*
@@ -38,7 +37,7 @@ class AdminController {
         require 'view/admin/frontend/template.php';
     }
     
-    public function editPost () {
+    public function viewPost () {
         $postManager = new PostManager();
         
         $post = $postManager->getSinglePost($_GET['id']);
@@ -66,20 +65,30 @@ class AdminController {
         
     }
     
+    public function editPost($id, $content, $title) {
+        
+        
+        
+        $postManager = new PostManager();
+        $postManager->editPost($id, $content, $title);
+        
+        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+        
+    }
+    
     
         
     
     
     public function deletePost($id) {
-       $post = new PostEntity();
-       $post->setId($id);
+       
        
        $postManager = new PostManager();
        $postManager->deletePost($id);
-       var_dump($id);
-       var_dump($post);
        
-       //header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+       
+       
+       header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
        
        
     }

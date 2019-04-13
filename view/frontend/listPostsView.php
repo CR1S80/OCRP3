@@ -1,4 +1,3 @@
-
 <?php $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
@@ -14,12 +13,12 @@ while ($data = $posts->fetch())
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data['title']) ?>
+            <?= $data['title'] ?>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         
         <p>
-            <?= nl2br(htmlspecialchars(substr($data['content'], 0, 450))). "..."; ?>
+            <?= substr($data['content'], 0, 450). "..."; ?>
             <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Voir la suite</a>
             <br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
