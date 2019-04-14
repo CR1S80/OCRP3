@@ -37,7 +37,7 @@ foreach($comments as $comment): ?>
 
     <p><strong><?= $comment->getAuthor(); ?></strong> le <?= $comment->getComment_date(); ?></p>
     <p><?= $comment->getComment(); ?></p> 
-    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=reportComment&id=<?= $comment->getId(); ?>">Signaler</a>
+    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=reportComment&id=<?= $comment->getId(); ?>">Signaler</a>
 
 <?php endforeach; ?>
 

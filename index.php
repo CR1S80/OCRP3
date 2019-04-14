@@ -49,7 +49,8 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'view') {
 
                     $adminController->viewPost();
-                } elseif ($_GET['adminAction'] == 'editPost') {
+                } 
+                elseif ($_GET['adminAction'] == 'editPost') {
 
                     $adminController->editPost($_GET['id'], $_POST['content'], $_POST['title']);
                 } elseif ($_GET['adminAction'] == 'addPost') {
@@ -61,21 +62,22 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'deletePost') {
 
                     $adminController->deletePost($_GET['id']);
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                 } elseif ($_GET['adminAction'] == 'adminSpace') {
 
                     $adminController->adminSpace();
                 } elseif ($_GET['adminAction'] == 'deleteComment') {
 
                     $commentManager->deleteComment($_GET['id']);
-                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    
                     
                 } elseif ($_GET['adminAction'] == 'validationComment') {
                     $commentManager->validationComment($_GET['id']);
-                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                     
-                } elseif ($_GET['adminAction'] == 'reportComment') {
-                    $commentManager->setReportedComment($_GET['id']);
-                }
+                    
+                } 
             }
         } else {
 
@@ -94,7 +96,10 @@ if (isset($_GET['action'])) {
         }
     } elseif ($_GET['action'] == 'logout') {
         $securityController->logout();
-    }
+    } elseif ($_GET['action'] == 'reportComment') {
+                    $commentManager->setReportedComment($_GET['id']);
+                    //header('Location: ' . $_SERVER['HTTP_REFERER']);
+                }
 } else {
     $frontController->listPosts();
 }    

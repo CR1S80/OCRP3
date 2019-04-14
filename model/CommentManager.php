@@ -68,7 +68,11 @@ class CommentManager {
     public function setReportedComment($commentId) {
         
         $comments = $this->db->prepare('UPDATE comments SET reports = reports + 1 WHERE ID=?');
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        
         return $comments->execute(array($commentId));
+        
         
         
         
@@ -78,13 +82,22 @@ class CommentManager {
     public function deleteComment($commentId) {
 
         $comments = $this->db->prepare('DELETE FROM comments WHERE id=?');
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']); 
+        
         return $comments->execute(array($commentId));
+        
         
     }
     
     public function validationComment($commentId) {
         $comments = $this->db->prepare('UPDATE comments set reports = 0 WHERE id=?');
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        
         return $comments->execute(array($commentId));
+        
+        
     }
 
 }
