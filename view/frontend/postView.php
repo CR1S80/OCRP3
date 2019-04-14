@@ -24,7 +24,7 @@
     </div>
     <div>
         <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="comment"></textarea>
+        <input type="text" id="comment" name="comment">
     </div>
     <div>
         <input type="submit" />
@@ -37,8 +37,10 @@ foreach($comments as $comment): ?>
 
     <p><strong><?= $comment->getAuthor(); ?></strong> le <?= $comment->getComment_date(); ?></p>
     <p><?= $comment->getComment(); ?></p> 
+    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=reportComment&id=<?= $comment->getId(); ?>">Signaler</a>
 
 <?php endforeach; ?>
+
 
 <?php $content = ob_get_clean(); ?>
 

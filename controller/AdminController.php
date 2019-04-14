@@ -21,6 +21,22 @@ use App\Model\PostEntity;
  */
 class AdminController {
     
+    public function adminSpace () {
+        
+        $commentManager = new CommentManager();
+        $reportedComments = $commentManager->getReportedComments();
+        
+        $postManager = new PostManager();
+        $posts = $postManager->getLastFivePosts();
+        
+        require 'view/admin/frontend/AdminSpace.php';
+        
+        require 'view/admin/frontend/template.php';
+        
+        
+    }
+    
+    
     public function home () {
         $postManager = new PostManager();
         $posts = $postManager->getLastFivePosts();
@@ -42,9 +58,7 @@ class AdminController {
         
         $post = $postManager->getSinglePost($_GET['id']);
         
-        $commentManager = new CommentManager();
-        $reportedComments = $commentManager->getReportedComments();
-        
+                
         $commentManager = new CommentManager();
         $comments = $commentManager->getCommentsFromSinglePost($_GET['id']);
         
@@ -58,8 +72,11 @@ class AdminController {
         $post = new PostEntity();
         $post->setTitle($title)
                  ->setContent($content);
+                
+        
         $postManager = new PostManager;
         $postManager->addPost($post);
+        
         
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
         
@@ -72,7 +89,7 @@ class AdminController {
         $postManager = new PostManager();
         $postManager->editPost($id, $content, $title);
         
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=view&id='.$id);
         
     }
     
@@ -88,10 +105,11 @@ class AdminController {
        
        
        
-       header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+       header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
        
        
     }
+    
     
    
 }

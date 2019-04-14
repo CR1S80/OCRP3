@@ -45,7 +45,7 @@ class CommentManager {
 
     public function getReportedComments() {
 
-        $req = $this->db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, post_id FROM comments WHERE reports > 0 ORDER BY comment_date DESC');
+        $req = $this->db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, post_id, reports FROM comments WHERE reports > 0 ORDER BY comment_date DESC');
         $req->execute();
         $tab = [];
         foreach ($req->fetchAll() as $result) {
@@ -55,7 +55,8 @@ class CommentManager {
                     ->setPost_id($result['post_id'])
                     ->setAuthor($result['author'])
                     ->setComment($result['comment'])
-                    ->setComment_date($result['comment_date_fr']);
+                    ->setComment_date($result['comment_date_fr'])
+                    ->setReports($result['reports']);
 
             $tab[] = $comments;
         }
@@ -63,12 +64,27 @@ class CommentManager {
 
         return $tab;
     }
+    
+    public function setReportedComment($commentId) {
+        
+        $comments = $this->db->prepare('UPDATE comments SET reports = reports + 1 WHERE ID=?');
+        return $comments->execute(array($commentId));
+        
+        
+        
+        
+    }
 
-    public function deleteComment() {
+    public function deleteComment($commentId) {
 
-        $comments = $this->db->prepare('DELETE FROM comments (WHERE id=?');
-        return $comments->execute(array($entity->getId(),
-        ));
+        $comments = $this->db->prepare('DELETE FROM comments WHERE id=?');
+        return $comments->execute(array($commentId));
+        
+    }
+    
+    public function validationComment($commentId) {
+        $comments = $this->db->prepare('UPDATE comments set reports = 0 WHERE id=?');
+        return $comments->execute(array($commentId));
     }
 
 }

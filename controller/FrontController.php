@@ -42,6 +42,13 @@ class FrontController {
         
         
     }
+    
+    public function reportedComment($id) {
+        $manager = new CommentManager();
+        $comment = $manager->setReportedComment($id);
+        
+        
+    }
 
 }
 

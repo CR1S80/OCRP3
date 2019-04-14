@@ -20,6 +20,7 @@ class CommentEntity {
     private $author;
     private $comment;
     private $comment_date;
+    private $reports;
     
     public function getId() {
         return $this->id;
@@ -39,6 +40,10 @@ class CommentEntity {
 
     public function getComment_date() {
         return $this->comment_date;
+    }
+    
+    public function getReports() {
+        return $this->reports;
     }
 
     public function setId($id) {
@@ -63,6 +68,11 @@ class CommentEntity {
 
     public function setComment_date($comment_date) {
         $this->comment_date = $comment_date;
+        return $this;
+    }
+    
+    public function setReports($reports) {
+        $this->reports = $reports;
         return $this;
     }
 

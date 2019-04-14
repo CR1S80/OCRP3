@@ -11,11 +11,13 @@ use App\Controller\FrontController;
 use App\Controller\AdminController;
 use App\Controller\SecurityController;
 use App\Model\PostManager;
+use App\Model\CommentManager;
 
 $frontController = new FrontController();
 $adminController = new AdminController();
 $securityController = new SecurityController();
 $postManager = new PostManager;
+$commentManager = new CommentManager;
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {
@@ -48,7 +50,7 @@ if (isset($_GET['action'])) {
 
                     $adminController->viewPost();
                 } elseif ($_GET['adminAction'] == 'editPost') {
-                    
+
                     $adminController->editPost($_GET['id'], $_POST['content'], $_POST['title']);
                 } elseif ($_GET['adminAction'] == 'addPost') {
 
@@ -59,6 +61,20 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'deletePost') {
 
                     $adminController->deletePost($_GET['id']);
+                } elseif ($_GET['adminAction'] == 'adminSpace') {
+
+                    $adminController->adminSpace();
+                } elseif ($_GET['adminAction'] == 'deleteComment') {
+
+                    $commentManager->deleteComment($_GET['id']);
+                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+                    
+                } elseif ($_GET['adminAction'] == 'validationComment') {
+                    $commentManager->validationComment($_GET['id']);
+                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+                    
+                } elseif ($_GET['adminAction'] == 'reportComment') {
+                    $commentManager->setReportedComment($_GET['id']);
                 }
             }
         } else {
