@@ -61,6 +61,7 @@ class AdminController {
                 
         $commentManager = new CommentManager();
         $comments = $commentManager->getCommentsFromSinglePost($_GET['id']);
+        $reportedComments = $commentManager->getReportedComments();
         
         require 'view/admin/frontend/postViewAdmin.php';
         

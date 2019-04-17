@@ -45,18 +45,23 @@ class CommentManager {
 
     public function getReportedComments() {
 
-        $req = $this->db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, post_id, reports FROM comments WHERE reports > 0 ORDER BY comment_date DESC');
+        $req = $this->db->prepare('SELECT comments.id, comments.author, comments.comment, DATE_FORMAT(comments.comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, comments.post_id, comments.reports, posts.title FROM comments '
+                                . 'JOIN posts ON posts.ID = comments.post_id '
+                .                 'WHERE comments.reports > 0 ORDER BY comments.comment_date DESC');
         $req->execute();
         $tab = [];
         foreach ($req->fetchAll() as $result) {
-
+            
+            $post = new PostEntity();
+            $post->setTitle($result['title']);
             $comments = new CommentEntity();
             $comments->setId($result['id'])
                     ->setPost_id($result['post_id'])
                     ->setAuthor($result['author'])
                     ->setComment($result['comment'])
                     ->setComment_date($result['comment_date_fr'])
-                    ->setReports($result['reports']);
+                    ->setReports($result['reports'])
+                    ->setPost($post);
 
             $tab[] = $comments;
         }
@@ -99,5 +104,7 @@ class CommentManager {
         
         
     }
+    
+    
 
 }

@@ -49,6 +49,9 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'view') {
 
                     $adminController->viewPost();
+                } elseif ($_GET['adminAction'] == '') {
+
+                    $adminController->viewPost();
                 } 
                 elseif ($_GET['adminAction'] == 'editPost') {
 

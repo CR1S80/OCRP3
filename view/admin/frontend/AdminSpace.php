@@ -31,9 +31,10 @@
                             <td><?= substr($data['content'], 0, 150) . "..."; ?></td> 
                             <td class="action">
 
-                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=view&id=<?= $data['id']; ?>"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                            </td>
+                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=edit&id=<?= $data['id']; ?>"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=edit&id=<?= $data['id']; ?>"><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                </td>
                         </tr>
 
                     </tbody>
@@ -61,6 +62,7 @@
                         <th>Auteur</th>
                         <th>Date</th>
                         <th>Commentaire</th>
+                        <th>Titre du chapitre</th>
                         <th>Nombre de signalement</th>
                         <th>Actions</th>
                     </tr>
@@ -72,11 +74,13 @@
                         <td><?= $comment->getAuthor(); ?></td>
                         <td><?= $comment->getComment_date(); ?></td>
                         <td><?= $comment->getComment(); ?></td>
+                        <td><?= $comment->getPost()->getTitle(); ?></td>
                         <td><?= $comment->getReports(); ?></td>
                         <td class="actionComment">
                             
                             <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=validationComment&id=<?= $comment->getId(); ?>"><button class="btn btn-success btn-xs" data-title="Validate" data-toggle="modal" data-target="#edit" ><i class="fa fa-check" aria-hidden="true"></i></button></a>
-                                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                            
                         </td>
                     </tr>      
                 </tbody>

@@ -35,7 +35,9 @@
         
 <!------ Include the above in your HEAD tag ---------->
 
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+
+
+<nav class="navbar navbar-icon-top navbar-expand-xl navbar-dark bg-dark">
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,7 +55,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=adminSpace">
                         <i class="fa fa-tachometer" aria-hidden="true">
-                            <?php if (count($reportedComments) != 0 )  { ?>
+                            <?php if  (isset ($reportedComments) && count($reportedComments) != 0 )  { ?>
                             <span class="badge badge-danger"><?php echo count($reportedComments); ?></span>
                             <?php }  ?>
                         </i>
@@ -77,11 +79,7 @@
                     </a>
                 </li>
             </ul>
-            
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+           
         </div>
     </nav>
 

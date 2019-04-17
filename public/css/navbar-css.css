@@ -114,14 +114,14 @@
     }
 }
 .action {
-    width: 110px;
+    width: 15%;
     align-content: center;
     text-align: center;
-    vertical-align: middle;
+    
 }
 
 .actionComment {
-    width: 110px;
+    width: 15%;
     align-content: center;
     text-align: center;
     vertical-align: middle;

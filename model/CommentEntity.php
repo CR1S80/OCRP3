@@ -21,7 +21,19 @@ class CommentEntity {
     private $comment;
     private $comment_date;
     private $reports;
+    private $post;
     
+    
+    public function getPost() {
+        return $this->post;
+    }
+
+    public function setPost($post) {
+        $this->post = $post;
+        return $this;
+    }
+
+        
     public function getId() {
         return $this->id;
     }
@@ -75,6 +87,8 @@ class CommentEntity {
         $this->reports = $reports;
         return $this;
     }
+    
+    
 
 
     
