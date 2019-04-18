@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-
+<link href="public/css/style.css" rel="stylesheet">
 <body>
 
 
@@ -10,13 +10,7 @@
     <main role="main">
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="display-3">Bienvenue sur le blog auteur</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-            </div>
-        </div>
+        
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">    
@@ -24,11 +18,13 @@
                 while ($data = $posts->fetch()) {
                     ?>  
 
-                    <div class="col-md-4">
-                        <h2><?= $data['title'] ?></h2><em>ajouter le <?= $data['creation_date_fr'] ?></em>
+                <a class="link-content" href="index.php?action=post&amp;id=<?= $data['id'] ?>">    
+                <div class="row-content">
+                        <h2><?= $data['title'] ?></h2><em>ajouté le <?= $data['creation_date_fr'] ?></em>
                         <p><?= substr($data['content'], 0, 450) . "..."; ?></p>
                         <p><a class="btn btn-secondary" href="index.php?action=post&amp;id=<?= $data['id'] ?>" role="button">Voir la suite &raquo;</a></p>
                     </div>
+                </a>
                 
 
 

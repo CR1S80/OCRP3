@@ -68,6 +68,21 @@ class AdminController {
         require 'view/admin/frontend/template.php';
     }
     
+    public function editPostAdmin () {
+        $postManager = new PostManager();
+        
+        $post = $postManager->getSinglePost($_GET['id']);
+        
+                
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getCommentsFromSinglePost($_GET['id']);
+        $reportedComments = $commentManager->getReportedComments();
+        
+        require 'view/admin/frontend/editPostAdmin.php';
+        
+        require 'view/admin/frontend/template.php';
+    }
+    
     public function addPost($title, $content) {
         
         $post = new PostEntity();

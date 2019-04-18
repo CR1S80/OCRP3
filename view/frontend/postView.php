@@ -1,21 +1,31 @@
 <?php $title = $post->getTitle(); ?>
 
 <?php ob_start(); ?>
-<h1><?= $title; ?></h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<head>
+    <link href="public/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<div class="news">
-    <h3>
-        <?= $post->getTitle(); ?>
-        <em>le <?= $post->getCreation_date(); ?></em>
-    </h3>
+</head>
+
+<div class="content">
+<a class="btn btn-primary back row" href="http://localhost/CoursPHP/TPBlog/OCRP3/" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
+<div class="header-title">
+    <h1><?= $title; ?></h1>
+    <em>le <?= $post->getCreation_date(); ?></em>
+</div>
+<div class="article">
     
-    <p>
+       
+        
+       
+    
+    
+    <div class="article-content">
         <?= $post->getContent(); ?>
-    </p>
+    </div>
 </div>
 
-<h2>Commentaires</h2>
+<h2 id="comment-ancre">Commentaires</h2>
 
 <form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
     <div>
@@ -40,6 +50,7 @@ foreach($comments as $comment): ?>
     <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=reportComment&id=<?= $comment->getId(); ?>">Signaler</a>
 
 <?php endforeach; ?>
+</div>
 
 
 <?php $content = ob_get_clean(); ?>

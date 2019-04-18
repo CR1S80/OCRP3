@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=logout">
+                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=logout">
                         <i class="fa fa-sign-out" aria-hidden="true">
                             
                         </i>

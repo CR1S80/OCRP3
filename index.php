@@ -49,9 +49,9 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'view') {
 
                     $adminController->viewPost();
-                } elseif ($_GET['adminAction'] == '') {
+                } elseif ($_GET['adminAction'] == 'edit') {
 
-                    $adminController->viewPost();
+                    $adminController->editPostAdmin();
                 } 
                 elseif ($_GET['adminAction'] == 'editPost') {
 
@@ -99,6 +99,7 @@ if (isset($_GET['action'])) {
         }
     } elseif ($_GET['action'] == 'logout') {
         $securityController->logout();
+        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/');
     } elseif ($_GET['action'] == 'reportComment') {
                     $commentManager->setReportedComment($_GET['id']);
                     //header('Location: ' . $_SERVER['HTTP_REFERER']);

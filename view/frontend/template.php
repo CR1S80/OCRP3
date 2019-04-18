@@ -12,7 +12,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../../../favicon.ico">
 
-       
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -23,24 +23,42 @@
 
         <!-- Custom styles for this template -->
         <link href="jumbotron.css" rel="stylesheet">
-    
-</head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-<body>
-    <?php
-    if (isset($_SESSION['admin']['email'])) {
-        ?>
-        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=adminSpace">Espace Admin</a>
+    </head>
 
-        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=logout">Déconnexion</a>
+
+    <header>
         <?php
-    } else {
-        echo '<a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=login">Connexion</a>';
-    }
-    ?>
+        if (isset($_SESSION['admin']['email'])) {
+            header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+        } else {
+            ?>       
+            <div class="container text-center bloc-title">
+                <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=login" class="btn btn-primary admin-btn nav-admin" data-original-title="" title="">Connexion</a>
+            </div>
+        <?php }
+        ?>
+        <div class="img-header">
+            <img src="public/image/landscape-2124756_1920.jpg">
+        </div>
+       
 
 
-    <?= $content ?>
-</body>
+
+        
+
+        </nav>
+
+    </header>
+
+
+    <body>
+
+
+
+        <?= $content ?>
+
+    </body>
 
 </html>

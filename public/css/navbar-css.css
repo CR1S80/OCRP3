@@ -130,3 +130,8 @@
 .col-sm-4 {
     text-align: right;
 }
+
+.deleteCom {
+    
+    color: red;
+}

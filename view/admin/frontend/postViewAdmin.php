@@ -3,6 +3,8 @@
     <script src="public/js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea',
             language: 'fr_FR'});</script>
+    
+    <LINK href="public/css/style.css" rel="stylesheet">
 </HEAD>
 <?php $title = $post->getTitle(); ?>
 
@@ -13,18 +15,17 @@
 <div class="news">
     <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
         <h3>
-            <INPUT name="title" value="<?= $post->getTitle(); ?>">
+           
             <em>le <?= $post->getCreation_date(); ?></em>
         </h3>
 
 
 
 
-        <textarea name="content" rows="75" cols="90">
+        <p>
             <?= $post->getContent(); ?>
-        </textarea>
-        <BUTTON>Valider la modification</BUTTON></form>
-        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost&id=<?= $post->getId() ?>"><BUTTON name="delete">Supprimer cet article</BUTTON></A>
+        </P>
+        
     
 
 
@@ -33,24 +34,15 @@
 
 <h2>Commentaires</h2>
 
-<form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
-    <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
-        <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="comment"></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
+
 
 <?php foreach ($comments as $comment): ?>
 
     <p><strong><?= $comment->getAuthor(); ?></strong> le <?= $comment->getComment_date(); ?></p>
-    <p><?= $comment->getComment(); ?></p> 
+    <p><?= $comment->getComment(); ?> </br>
+        <a class="deleteCom" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>">Supprimer</a>
+    </p> 
+    
 
 <?php endforeach; ?>
 
