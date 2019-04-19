@@ -234,3 +234,47 @@ footer {
 .content {
     margin-top: 25px;
 }
+
+.comment-space {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  
+  margin: auto;
+  margin-top: 35px;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-family: 'Lato', sans-serif;
+  padding: 25px;
+}
+
+.comment-text {
+  margin-bottom: rem(20);
+}
+
+.bottom-comment {
+  color: #acb4c2;
+  font-size: rem(14);
+}
+.bottom-comment a {
+    text-decoration: none;
+    color: #acb4c2;
+    padding: 1px 5px;
+}
+
+.bottom-comment a:hover {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #ac2925;
+    padding: 5px 1px;
+}
+
+.comment-date {
+  float: left;
+}
+
+.comment-action {
+    float: right;
+    
+}
