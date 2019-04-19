@@ -32,7 +32,10 @@ if (isset($_GET['action'])) {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             if (isset($_POST['author']) && isset($_POST['comment'])) {
                 if (!empty(trim($_POST['author'])) && !empty(trim($_POST['comment']))) {
+                    
                     $frontController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                    
+                    
                 } else {
                     echo 'Erreur : tous les champs ne sont pas remplis !';
                 }
@@ -102,7 +105,7 @@ if (isset($_GET['action'])) {
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/');
     } elseif ($_GET['action'] == 'reportComment') {
                     $commentManager->setReportedComment($_GET['id']);
-                    //header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    //header('Location: ' . $_SERVER['HTTP_REFERER']'.);
                 }
 } else {
     $frontController->listPosts();

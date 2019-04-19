@@ -73,7 +73,7 @@ th{
     cursor: pointer;
 }
 .checkbox label, .radio label, label {
-    font-family: Roboto;
+    
     font-size: 14px !important;
     font-weight: 300 !important;
     color: #666767 !important;
@@ -160,6 +160,11 @@ textarea{
     margin-left: 150px;
 }
 
+.btn btn-primary submit {
+    width: 100% !important;
+    margin: 1em 0 !important;
+}
+
 .content {
     width: 950px;
     margin: auto;
@@ -226,6 +231,11 @@ footer {
     font-family: 'Lato', sans-serif;
 }
 
+.article-content {
+    margin: 5%;
+    text-align: justify;
+}
+
 .header-title {
     text-align: center;
     font-family: 'Lato', sans-serif;
@@ -233,6 +243,10 @@ footer {
 
 .content {
     margin-top: 25px;
+    width: 100%;
+    margin: auto;
+    padding: 1em;
+
 }
 
 .comment-space {
@@ -240,7 +254,7 @@ footer {
   border-radius: 2px;
   display: inline-block;
   
-  margin: auto;
+  
   margin-top: 35px;
   position: relative;
   width: 100%;
@@ -267,7 +281,7 @@ footer {
     color: #fff;
     background-color: #c9302c;
     border-color: #ac2925;
-    padding: 5px 1px;
+    
 }
 
 .comment-date {
@@ -278,3 +292,23 @@ footer {
     float: right;
     
 }
+
+.form-comment {
+    
+    font-family: 'Lato', sans-serif !important;
+    margin: 0;
+}
+
+#comment {
+    margin: 0;
+    
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+#author, #comment {
+        padding-left: 5px !important;
+}
+

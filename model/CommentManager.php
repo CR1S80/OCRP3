@@ -17,6 +17,9 @@ class CommentManager {
     public function addComments(CommentEntity $entity) {
 
         $comments = $this->db->prepare('INSERT INTO comments (post_id, author, comment, comment_date) VALUES (?, ?, ?, NOW())');
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#comment');
+        
         return $comments->execute(array($entity->getId(),
                     $entity->getAuthor(),
                     $entity->getComment()
@@ -74,9 +77,12 @@ class CommentManager {
         
         $comments = $this->db->prepare('UPDATE comments SET reports = reports + 1 WHERE ID=?');
         
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        \header('Location: ' . $_SERVER['HTTP_REFERER'] . '#comment-' . $commentId);
         
         return $comments->execute(array($commentId));
+        
+        
+        
         
         
         

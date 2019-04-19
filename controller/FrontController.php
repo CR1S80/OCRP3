@@ -38,7 +38,7 @@ class FrontController {
         $commentManager = new CommentManager;
         $commentManager->addComments($comments);
         
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        
        
         
         

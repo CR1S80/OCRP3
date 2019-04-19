@@ -28,23 +28,27 @@
         <h1 id="comment-ancre">Commentaires</h1>
     </div>
 
-    <form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
-        <div>
-            <label for="author">Auteur</label><br />
-            <input type="text" id="author" name="author" />
-        </div>
-        <div>
-            <label for="comment">Commentaire</label><br />
-            <input type="text" id="comment" name="comment">
-        </div>
-        <div>
-            <input type="submit" />
-        </div>
-    </form>
+    <div class="form-comment" id="comment">
+        <form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
+            
+            <div class="input-comment">
+                
+                <textarea cols="30" rows="5" type="text" id="comment" name="comment" placeholder="Votre commentaire..."></textarea>
+            </div>
+            <div class="input-author">
+                
+                <input type="text" id="author" name="author" placeholder="Votre pseudo" />
+            </div>
+            <div>
+                <button class="btn btn-primary submit" style="    width: 100%;
+                                                                  margin: 15px 0 !important;" type="submit">Laisser un commentaire</button>
+            </div>
+        </form>
+    </div>
 
     <?php foreach ($comments as $comment): ?>
-        <div class="comment-space">
-            <div class="comment-author"><?= $comment->getAuthor(); ?> a commenté :</div>
+    <div class="comment-space">
+            <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
             <hr>
             <p class="comment-text"><?= $comment->getComment(); ?> </p>
             <div class="bottom-comment">
@@ -55,7 +59,7 @@
 
         </div>
 
-<?php endforeach; ?>
+    <?php endforeach; ?>
 </div>
 
 
