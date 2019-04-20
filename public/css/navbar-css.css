@@ -1,4 +1,5 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {
     position: relative;
@@ -10,7 +11,7 @@
     font-size: 0.75rem;
     position: absolute;
     right: 0;
-    font-family: sans-serif;
+    font-family: 'Leto',sans-serif !important;
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {
@@ -113,19 +114,7 @@
         top: -7px;
     }
 }
-.action {
-    width: 15%;
-    align-content: center;
-    text-align: center;
-    
-}
 
-.actionComment {
-    width: 15%;
-    align-content: center;
-    text-align: center;
-    vertical-align: middle;
-}
 
 .col-sm-4 {
     text-align: right;

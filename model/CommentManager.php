@@ -94,7 +94,7 @@ class CommentManager {
 
         $comments = $this->db->prepare('DELETE FROM comments WHERE id=?');
         
-        header('Location: ' . $_SERVER['HTTP_REFERER']); 
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#Reported-comment'); 
         
         return $comments->execute(array($commentId));
         
@@ -104,7 +104,7 @@ class CommentManager {
     public function validationComment($commentId) {
         $comments = $this->db->prepare('UPDATE comments set reports = 0 WHERE id=?');
         
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '#Reported-comment'); 
         
         return $comments->execute(array($commentId));
         

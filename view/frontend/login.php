@@ -1,11 +1,12 @@
 <?php
 
 ob_start();
-
+$title = 'Connectez vous'
 ?>
+<link href="public/css/style.css"
 
-<div class="container" style="margin-top: 50px">
-  <div class="row">
+<div class="container">
+    <div class="row login" style="Width: 100% !important; margin: auto !important; font-family: 'Leto';">
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="card p-3">

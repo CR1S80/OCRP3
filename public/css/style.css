@@ -312,3 +312,51 @@ footer {
         padding-left: 5px !important;
 }
 
+.input-author {
+    margin-top: 10px;
+}
+
+.btn-block {
+    margin: 0 !important;
+}
+
+.card {
+    border-radius: 0 !important;
+    margin-top: 30px !important;
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.form-control  {
+    border-radius: 0 !important;
+    margin-top: 10px;
+    font-family: 'Leto', sans-serif !important;
+    font-weight: normal;
+    
+}
+
+.col-md-6 {
+    
+    font-family: 'Leto', sans-serif;
+}
+
+h5.text-center {
+    font-family: 'Leto', sans-serif;
+}
+
+input.form-control {
+    font-family: 'Leto', sans-serif;
+}
+
+.navbar-toggler {
+    
+    border-radius: 0;
+}
+
+* {
+    font-family: 'Leto', sans-serif;
+    
+}
+

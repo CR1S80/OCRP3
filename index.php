@@ -75,12 +75,10 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'deleteComment') {
 
                     $commentManager->deleteComment($_GET['id']);
-                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                     
                     
                 } elseif ($_GET['adminAction'] == 'validationComment') {
                     $commentManager->validationComment($_GET['id']);
-                    header('Location: ' . $_SERVER['HTTP_REFERER']);
                     
                     
                 } 

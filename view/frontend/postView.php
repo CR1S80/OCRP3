@@ -48,7 +48,7 @@
 
     <?php foreach ($comments as $comment): ?>
     <div class="comment-space">
-            <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
+        <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
             <hr>
             <p class="comment-text"><?= $comment->getComment(); ?> </p>
             <div class="bottom-comment">

@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <title><?= $title ?></title>
         <link href="public/css/navbar-css" rel="stylesheet" /> 
+        <link href="public/css/style.css" rel="stylesheet" />
         <script src="public/js/tinymce/tinymce.min.js"></script>
         <script>tinymce.init({selector: 'textarea',
                 language: 'fr_FR'});</script>
