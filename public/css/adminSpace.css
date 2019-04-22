@@ -1,46 +1,42 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300');
 
-* {
-    font-family: 'Leto', sans-serif;
-    font-weight: normal !important;
-    
-}
+
 
 
 
 h2 {
-   text-align: center; 
-   margin: 35px 0;
+    text-align: center; 
+    margin: 35px 0;
 }
 
 table {
-  font-family: 'Leto', sans-serif;
-  
-  background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-  margin: 35px 0;
- 
+    font-family: 'Lato', sans-serif !important;
+
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+    margin: 35px 0;
+
 }
 
 
 
 .table { 
-  width: 100%;
-  margin-bottom: 20px;
-  color: #CCCECF !important;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #CCCECF !important;
 }
 
 .table th,
 .table td {
-  font-weight: normal;
-  text-align: center;
-  padding: 8px 15px;
-  line-height: 20px;
-  
-  vertical-align: middle;
-  border-top: 1px solid #dddddd;
+    font-weight: normal;
+    text-align: center;
+    padding: 8px 15px;
+    line-height: 20px;
+
+    vertical-align: middle;
+    border-top: 1px solid #dddddd;
 }
 
 .table td {
@@ -48,44 +44,53 @@ table {
 }
 
 .table thead th {
-  background: #343A40;
-  vertical-align: bottom;
+    background: #343A40;
+    vertical-align: bottom;
 }   
 
 
 
 
 .table .t-small {
-  width: 5%;
+    width: 5%;
 }
 .table .t-medium {
-  width: 15%;
+    width: 15%;
+}
+
+td.t-status.t-active {
+    width: 17% !important;
 }
 
 
 
 /* Small Sizes */
 @media (max-width: 1200px) { 
-  .table-action thead {
-    display: none;
-  }
-  .table-action tr {
-    border-bottom: 1px solid #dddddd;
-    
-  }
-  .table-action td {
-    border: 0;
-  }
-  .table-action td {
-    display: block;
-  }
-  
-  .col-sm-4 {
-      text-align: center;
-      margin: 10px;
-  }
-  
-  .table {
-      margin: auto;
-  }
+    td.t-status.t-active {
+        width: auto !important;
+    }
+
+
+    .table-action thead {
+        display: none;
+    }
+    .table-action tr {
+        border-bottom: 1px solid #dddddd;
+
+    }
+    .table-action td {
+        border: 0;
+    }
+    .table-action td {
+        display: block;
+    }
+
+    .col-sm-4 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    .table {
+        margin: auto;
+    }
 }

@@ -18,6 +18,12 @@ class PostManager {
 
         require 'view/admin/frontend/AddPost.php';
     }
+    
+    public function getAllPosts() {
+        $req = $this->db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+
+        return $req;
+    }
 
     public function getLastFivePosts() {
 
@@ -52,7 +58,7 @@ class PostManager {
     }
 
     public function deletePost($postId) {
-        $post = $this->db->prepare('DELETE FROM posts WHERE id=?');
+        $post = $this->db->prepare('DELETE posts,comments FROM posts LEFT JOIN comments  ON (posts.ID = comments.post_id) WHERE posts.ID =?');
         return $post->execute(array($postId));
     }
 

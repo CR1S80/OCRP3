@@ -3,15 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/navbar-css.css</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/index.php</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/test.php</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/style.css</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/postViewAdmin.php</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/adminSpace.css</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/controller/AdminController.php</file>
-            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/editPostAdmin.php</file>
             <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/AdminSpace.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/model/CommentEntity.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/controller/FrontController.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/navbar-css.css</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/frontend/login.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/model/PostManager.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/test.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/template.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/listPostsAdmin.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/editPostAdmin.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/adminSpace.css</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/model/DbConnect.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/frontend/template.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/controller/AdminController.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/admin/frontend/postViewAdmin.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/controller/SecurityController.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/frontend/listPostsView.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/index.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/public/css/style.css</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/view/frontend/postView.php</file>
+            <file>file:/C:/wamp64/www/CoursPHP/TPBlog/OCRP3/model/CommentManager.php</file>
         </group>
     </open-files>
 </project-private>

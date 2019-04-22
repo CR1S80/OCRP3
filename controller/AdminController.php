@@ -27,7 +27,7 @@ class AdminController {
         $reportedComments = $commentManager->getReportedComments();
         
         $postManager = new PostManager();
-        $posts = $postManager->getLastFivePosts();
+        $posts = $postManager->getAllPosts();
         
         require 'view/admin/frontend/AdminSpace.php';
         
@@ -58,7 +58,11 @@ class AdminController {
         
         $post = $postManager->getSinglePost($_GET['id']);
         
-                
+          if ($post->getId() === NULL) {
+            require 'view/frontend/404.php';;
+        } else {
+            
+             
         $commentManager = new CommentManager();
         $comments = $commentManager->getCommentsFromSinglePost($_GET['id']);
         $reportedComments = $commentManager->getReportedComments();
@@ -67,20 +71,28 @@ class AdminController {
         
         require 'view/admin/frontend/template.php';
     }
+    }
     
     public function editPostAdmin () {
         $postManager = new PostManager();
         
         $post = $postManager->getSinglePost($_GET['id']);
         
-                
+         if ($post->getId() === NULL) {
+            require 'view/frontend/404.php';;
+        } else {
+            
+        
         $commentManager = new CommentManager();
+        
         $comments = $commentManager->getCommentsFromSinglePost($_GET['id']);
+        
         $reportedComments = $commentManager->getReportedComments();
         
         require 'view/admin/frontend/editPostAdmin.php';
         
         require 'view/admin/frontend/template.php';
+    }
     }
     
     public function addPost($title, $content) {
@@ -93,6 +105,9 @@ class AdminController {
         $postManager = new PostManager;
         $postManager->addPost($post);
         
+        $commentManager = new CommentManager();
+        $reportedComments = $commentManager->getReportedComments();
+        
         
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
         
@@ -104,6 +119,9 @@ class AdminController {
         
         $postManager = new PostManager();
         $postManager->editPost($id, $content, $title);
+        
+        $commentManager = new CommentManager();
+        $reportedComments = $commentManager->getReportedComments();
         
         header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=view&id='.$id);
         

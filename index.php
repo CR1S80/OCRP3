@@ -42,7 +42,7 @@ if (isset($_GET['action'])) {
             } else {
                 echo 'Erreur : aucun identifiant de billet envoyé';
             }
-        }//message post inexistant
+        }echo '404';
     } elseif ($_GET['action'] == 'admin') {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
 
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'deletePost') {
 
                     $adminController->deletePost($_GET['id']);
-                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
                 } elseif ($_GET['adminAction'] == 'adminSpace') {
 
                     $adminController->adminSpace();

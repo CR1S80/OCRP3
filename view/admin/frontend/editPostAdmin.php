@@ -1,36 +1,81 @@
-<!DOCTYPE html>
-<HEAD>
-    <script src="public/js/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({selector: 'textarea',
-            language: 'fr_FR'});</script>
-</HEAD>
-<?php $title = $post->getTitle(); ?>
+<?php
+$title = $post->getTitle();
 
-<?php ob_start(); ?>
-<h1><?= $title; ?></h1>
-<p><a href="index.php?action=admin&amp;adminAction=home">Retour à la liste des billets</a></p>
+ob_start();
+?>
 
-<div class="news">
-    <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
-        <h3>
-            <INPUT name="title" value="<?= $post->getTitle(); ?>">
-            <em>le <?= $post->getCreation_date(); ?></em>
-        </h3>
+<div class="content">
+    <a class="btn btn-primary back row" href="http://localhost/CoursPHP/TPBlog/OCRP3/" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
+
+
+
+    <div class="article">
 
 
 
 
-        <textarea name="content" rows="75" cols="90">
-            <?= $post->getContent(); ?>
-        </textarea>
-        <BUTTON>Valider la modification</BUTTON>
-        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=deletePost&id=<?= $post->getId() ?>"><BUTTON name="delete">Supprimer cet article</BUTTON></A>
-    </form>
+
+
+        <div class="article-content">
+            <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
+                <h1>
+
+                    <input class="input-title" name="title" type="text" value="<?= $post->getTitle(); ?>">
+
+                </h1>
+
+                <textarea name="content" rows="75" cols="90">
+                    <?= $post->getContent(); ?>
+                </textarea>
+
+                <div>
+                    <button class="btn btn-primary edit" type="submit">Valider la modification</button>
+                    <button type="button" class="btn btn-danger delete" data-toggle="modal" data-target="#ModalDeletePost">Supprimer cet article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal delete --> 
+
+    <div class="modal fade" id="deleteModalComment" tabindex="-1" role="dialog" aria-labelledby="ModalDeletePost" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delete">Voulez vous vraiment supprimer ce commentaire ? </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span style="color: red;" >Si vous le supprimer, il sera effacer définitivement</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
 
 
 
 
 </div>
+
+
+
+
+
+
+
 
 
 

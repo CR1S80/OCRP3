@@ -1,11 +1,7 @@
-<?php $title = $post->getTitle(); ?>
+<?php $title = $post->getTitle();
 
-<?php ob_start(); ?>
-<head>
-    <link href="public/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ob_start(); ?>
 
-</head>
 
 <div class="content">
     <a class="btn btn-primary back row" href="http://localhost/CoursPHP/TPBlog/OCRP3/" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
@@ -27,6 +23,14 @@
     <div class="header-title">
         <h1 id="comment-ancre">Commentaires</h1>
     </div>
+    
+    <?php 
+     var_dump($post);
+    if (count($comments) === 0) { ?>
+    
+    <div class="comment-space" id="Reported-comment">
+        <p>Il n'y a pas de commentaire pour le moment, ajoutez en un !</p>
+    </div><br><br> <?php } ?>
 
     <div class="form-comment" id="comment">
         <form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
@@ -45,8 +49,12 @@
             </div>
         </form>
     </div>
+    
+    
+    <?php
+    
 
-    <?php foreach ($comments as $comment): ?>
+    foreach ($comments as $comment): ?>
     <div class="comment-space">
         <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
             <hr>

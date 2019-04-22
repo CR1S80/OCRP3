@@ -21,12 +21,15 @@ class FrontController {
         $manager = new PostManager();
         $post = $manager->getSinglePost($_GET['id']);
         
+        if ($post->getId() === NULL) {
+            require 'view/frontend/404.php';;
+        } else {
                 
         $manager = new CommentManager();
         $comments = $manager->getCommentsFromSinglePost($_GET['id']);
         
 
-        require 'view/frontend/postView.php';
+        require 'view/frontend/postView.php';}
     }
 
     public function addComment($id, $author, $comment) {
