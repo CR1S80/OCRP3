@@ -32,12 +32,13 @@ class FrontController {
         require 'view/frontend/postView.php';}
     }
 
-    public function addComment($id, $author, $comment) {
+    public function addComment($id, $author, $comment, $ip) {
         
         $comments = new CommentEntity();
         $comments->setId($id)
                  ->setAuthor($author)
-                 ->setComment($comment);
+                 ->setComment($comment)
+                 ->setIP($ip);
         $commentManager = new CommentManager;
         $commentManager->addComments($comments);
         

@@ -1,6 +1,7 @@
 <?php $title = $post->getTitle();
 
-ob_start(); ?>
+ob_start();
+?>
 
 
 <div class="content">
@@ -17,46 +18,45 @@ ob_start(); ?>
 
 
         <div class="article-content">
-            <?= $post->getContent(); ?>
+<?= $post->getContent(); ?>
         </div>
     </div>
     <div class="header-title">
         <h1 id="comment-ancre">Commentaires</h1>
     </div>
-    
-    <?php 
-     var_dump($post);
-    if (count($comments) === 0) { ?>
-    
-    <div class="comment-space" id="Reported-comment">
-        <p>Il n'y a pas de commentaire pour le moment, ajoutez en un !</p>
-    </div><br><br> <?php } ?>
+
+    <?php if (count($comments) === 0) { ?>
+
+        <div class="comment-space" id="Reported-comment">
+            <p>Il n'y a pas de commentaire pour le moment, ajoutez en un !</p>
+        </div><br><br> <?php } ?>
 
     <div class="form-comment" id="comment">
         <form action="index.php?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
-            
+
             <div class="input-comment">
-                
+
                 <textarea cols="30" rows="5" type="text" id="comment" name="comment" placeholder="Votre commentaire..."></textarea>
             </div>
             <div class="input-author">
-                
+
                 <input type="text" id="author" name="author" placeholder="Votre pseudo" />
             </div>
             <div>
                 <button class="btn btn-primary submit" style="    width: 100%;
-                                                                  margin: 15px 0 !important;" type="submit">Laisser un commentaire</button>
+                        margin: 15px 0 !important;" type="submit">Laisser un commentaire</button>
             </div>
+
+
+
+
         </form>
     </div>
-    
-    
-    <?php
-    
 
-    foreach ($comments as $comment): ?>
-    <div class="comment-space">
-        <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
+
+    <?php foreach ($comments as $comment): ?>
+        <div class="comment-space">
+            <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
             <hr>
             <p class="comment-text"><?= $comment->getComment(); ?> </p>
             <div class="bottom-comment">
@@ -67,11 +67,11 @@ ob_start(); ?>
 
         </div>
 
-    <?php endforeach; ?>
+<?php endforeach; ?>
 </div>
 
 
-<?php $content = ob_get_clean(); ?>
+    <?php $content = ob_get_clean(); ?>
 
 <?php require('view/frontend/template.php'); ?>
 

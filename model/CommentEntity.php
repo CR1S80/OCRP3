@@ -22,7 +22,18 @@ class CommentEntity {
     private $comment_date;
     private $reports;
     private $post;
+    private $IP;
     
+    
+    public function getIP() {
+        return $this->IP;
+    }
+
+    public function setIP($IP) {
+        $this->IP = $IP;
+        return $this;
+    }
+        
     
     public function getPost() {
         return $this->post;

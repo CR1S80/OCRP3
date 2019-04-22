@@ -15,14 +15,18 @@ class CommentManager {
     }
 
     public function addComments(CommentEntity $entity) {
+        
+        
 
-        $comments = $this->db->prepare('INSERT INTO comments (post_id, author, comment, comment_date) VALUES (?, ?, ?, NOW())');
+        $comments = $this->db->prepare('INSERT INTO comments (post_id, author, comment, IP, comment_date) VALUES (?, ?, ?, ?, NOW())');
         
         header('Location: ' . $_SERVER['HTTP_REFERER'] . '#comment');
         
         return $comments->execute(array($entity->getId(),
                     $entity->getAuthor(),
-                    $entity->getComment()
+                    $entity->getComment(),
+                    $entity->getIP()
+                    
         ));
     }
 

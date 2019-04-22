@@ -33,7 +33,7 @@ if (isset($_GET['action'])) {
             if (isset($_POST['author']) && isset($_POST['comment'])) {
                 if (!empty(trim($_POST['author'])) && !empty(trim($_POST['comment']))) {
                     
-                    $frontController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                    $frontController->addComment($_GET['id'], $_POST['author'], $_POST['comment'], $_SERVER['REMOTE_ADDR']);
                     
                     
                 } else {
