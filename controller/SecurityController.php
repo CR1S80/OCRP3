@@ -42,7 +42,7 @@ class SecurityController {
         }
         
 
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+        header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home');
         
         
     }
@@ -51,7 +51,7 @@ class SecurityController {
         
         session_destroy();
         
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/');
+        header('Location: https://projet3.cpdmdev-mg.fr/');
         
 
     }

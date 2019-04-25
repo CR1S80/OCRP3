@@ -25,7 +25,7 @@ ob_start();
 
 
         <div class="article-content">
-            <form class="form-add" action="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&amp;adminAction=add" method="post">
+            <form class="form-add" action="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&amp;adminAction=add" method="post">
 
                 <input class="input-title" name="title" type="text" placeholder="Votre titre">
 

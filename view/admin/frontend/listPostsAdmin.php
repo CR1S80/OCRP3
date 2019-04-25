@@ -17,11 +17,11 @@
                 while ($data = $posts->fetch()) {
                     ?>  
 
-                <a class="link-content" href="index.php?action=admin&amp;adminAction=view&amp;id=<?= $data['id'] ?>">    
+                <a class="link-content" href="https://projet3.cpdmdev-mg.fr/?action=admin&amp;adminAction=view&amp;id=<?= $data['id'] ?>">    
                 <div class="row-content">
                         <h2><?= $data['title'] ?></h2><em>ajouté le <?= $data['creation_date_fr'] ?></em>
                         <p><?= substr($data['content'], 0, 450) . "..."; ?></p>
-                        <p><a class="btn btn-secondary" href="index.php?action=admin&amp;adminAction=view&amp;id=<?= $data['id'] ?>" role="button">Voir la suite &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="https://projet3.cpdmdev-mg.fr/?action=admin&amp;adminAction=view&amp;id=<?= $data['id'] ?>" role="button">Voir la suite &raquo;</a></p>
                     </div>
                 </a>
                 

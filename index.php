@@ -33,7 +33,7 @@ if (isset($_GET['action'])) {
             if (isset($_POST['author']) && isset($_POST['comment'])) {
                 if (!empty(trim($_POST['author'])) && !empty(trim($_POST['comment']))) {
                     
-                    $frontController->addComment($_GET['id'], $_POST['author'], $_POST['comment'], $_SERVER['REMOTE_ADDR']);
+                    $frontController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                     
                     
                 } else {
@@ -68,7 +68,7 @@ if (isset($_GET['action'])) {
                 } elseif ($_GET['adminAction'] == 'deletePost') {
 
                     $adminController->deletePost($_GET['id']);
-                    header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+                    header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=adminSpace');
                 } elseif ($_GET['adminAction'] == 'adminSpace') {
 
                     $adminController->adminSpace();
@@ -100,7 +100,7 @@ if (isset($_GET['action'])) {
         }
     } elseif ($_GET['action'] == 'logout') {
         $securityController->logout();
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/');
+        header('Location: https://projet3.cpdmdev-mg.fr/');
     } elseif ($_GET['action'] == 'reportComment') {
                     $commentManager->setReportedComment($_GET['id']);
                     //header('Location: ' . $_SERVER['HTTP_REFERER']'.);

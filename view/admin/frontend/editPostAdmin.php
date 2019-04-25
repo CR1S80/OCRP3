@@ -5,7 +5,7 @@ ob_start();
 ?>
 
 <div class="content">
-    <a class="btn btn-primary back row" href="http://localhost/CoursPHP/TPBlog/OCRP3/" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
+    <a class="btn btn-primary back row" href="https://projet3.cpdmdev-mg.fr//" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
 
 
 
@@ -17,7 +17,7 @@ ob_start();
 
 
         <div class="article-content">
-            <form action="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
+            <form action="https://projet3.cpdmdev-mg.fr//?action=admin&adminAction=editPost&id=<?= $post->getId() ?>" method="post">
                 <h1>
 
                     <input class="input-title" name="title" type="text" value="<?= $post->getTitle(); ?>">
@@ -38,7 +38,7 @@ ob_start();
 
     <!-- Modal delete --> 
 
-    <div class="modal fade" id="deleteModalComment" tabindex="-1" role="dialog" aria-labelledby="ModalDeletePost" aria-hidden="true">
+    <div class="modal fade" id="deleteModalComment" tabhttps://projet3.cpdmdev-mg.fr/="-1" role="dialog" aria-labelledby="ModalDeletePost" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -52,7 +52,7 @@ ob_start();
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                    <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
                 </div>
             </div>
         </div>

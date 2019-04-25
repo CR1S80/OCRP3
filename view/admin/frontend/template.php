@@ -39,14 +39,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=home">
+                    <a class="nav-link" href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home">
                         <i class="fa fa-home"></i>
                         Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=adminSpace">
+                    <a class="nav-link" href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=adminSpace">
                             <i class="fa fa-tachometer-alt fa-lg">
                         <?php if (isset($reportedComments) && count($reportedComments) != 0) { ?>
                                 <span class="badge badge-danger"><?php echo count($reportedComments); ?></span>
@@ -60,13 +60,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=addPost">
+                    <a class="nav-link" href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=addPost">
                         <i class="fa fa-plus-square"></i>
                         Ajouter un article
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=logout">
+                    <a class="nav-link" href="https://projet3.cpdmdev-mg.fr/?action=logout">
                         <i class="fa fa-sign-out-alt"></i>
 
                         </i>

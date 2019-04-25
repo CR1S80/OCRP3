@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>Derniers Articles</h2></div>
                     <div class="col-sm-4">
-                        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=addPost"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter un article</button></a>
+                        <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=addPost"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter un article</button></a>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,8 @@
                                 <td><?= $data['creation_date_fr'] ?></td>
                                 <td><?= substr($data['content'], 0, 150) . "..."; ?></td>
                                 <td class="t-status t-active">
-                                    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=view&id=<?= $data['id']; ?>"><button class="btn btn-success btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><i class="far fa-eye"></i></button></a>
-                                    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=edit&id=<?= $data['id']; ?>"><button class="btn btn-warning btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><i class="far fa-edit"></i></button></a>
+                                    <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=view&id=<?= $data['id']; ?>"><button class="btn btn-success btn-xs" data-title="View" data-toggle="modal" data-target="#view" ><i class="far fa-eye"></i></button></a>
+                                    <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=edit&id=<?= $data['id']; ?>"><button class="btn btn-warning btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><i class="far fa-edit"></i></button></a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#ModalDeletePost"><i class="far fa-trash-alt"></i></button>
                                 </td>
                             </tr>
@@ -50,7 +50,7 @@
 
 
                         <!-- Modal post -->
-                        <div class="modal fade" id="ModalDeletePost" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+                        <div class="modal fade" id="ModalDeletePost" tabhttps://projet3.cpdmdev-mg.fr/="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                        <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deletePost&id=<?= $data['id']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                     <td data-label="Nombre de signalement">Commentaire signalé <?= $comment->getReports(); ?> fois</td>
                                     <td data-label="Actions" class="actionComment">
 
-                                        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=validationComment&id=<?= $comment->getId(); ?>"><button class="btn btn-success btn-xs" data-title="Validate" data-toggle="modal" data-target="#edit" ><i class="fa fa-check" aria-hidden="true"></i></button></a>
+                                        <a href="https://projet3.cpdmdev-mg.fr//?action=admin&adminAction=validationComment&id=<?= $comment->getId(); ?>"><button class="btn btn-success btn-xs" data-title="Validate" data-toggle="modal" data-target="#edit" ><i class="fa fa-check" aria-hidden="true"></i></button></a>
                                         <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#deleteModalComment" ><i class="far fa-trash-alt"></i></button>
 
                                     </td>
@@ -124,7 +124,7 @@
                             </tbody>
 
                             <!-- Modal comment -->
-                            <div class="modal fade" id="deleteModalComment" tabindex="-1" role="dialog" aria-labelledby="deleteModalComment" aria-hidden="true">
+                            <div class="modal fade" id="deleteModalComment" tabhttps://projet3.cpdmdev-mg.fr/="-1" role="dialog" aria-labelledby="deleteModalComment" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                            <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                            <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                         </div>
                                     </div>
                                 </div>

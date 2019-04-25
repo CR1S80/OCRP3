@@ -11,7 +11,7 @@ $title = 'Connectez vous'
     <div class="col-md-6">
       <div class="card p-3">
         <h5 class="text-center">Veuillez vous connecter</h5>
-        <form action="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=checklogin" method="post">
+        <form action="https://projet3.cpdmdev-mg.fr/?action=checklogin" method="post">
           <div class="form-group">
               <input name="email" type="text" class="form-control" placeholder="Identifiant">
           </div>

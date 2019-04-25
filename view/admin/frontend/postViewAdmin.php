@@ -5,7 +5,7 @@
 ob_start(); ?>
 
 <div class="content">
-    <a class="btn btn-primary back row" href="http://localhost/CoursPHP/TPBlog/OCRP3/" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
+    <a class="btn btn-primary back row" href="https://projet3.cpdmdev-mg.fr//" data-original-title="" title=""><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste des chapitres</a>
     <div class="header-title">
         <h1><?= $title; ?></h1>
         <em>le <?= $post->getCreation_date(); ?></em>
@@ -20,14 +20,14 @@ ob_start(); ?>
         <div class="article-content">
             <?= $post->getContent(); ?>
             <div>
-                    <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=edit&id=<?= $post->getId(); ?>"><button class="btn btn-warning edit" data-title="Edit" data-toggle="modal" data-target="#edit" >Éditer cet article</button></a>
+                    <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=edit&id=<?= $post->getId(); ?>"><button class="btn btn-warning edit" data-title="Edit" data-toggle="modal" data-target="#edit" >Éditer cet article</button></a>
                     <button type="button" class="btn btn-danger deletePost" data-toggle="modal" data-target="#ModalDeletePost">Supprimer cet article</button>
                 </div>
         </div>
         
         
         <!-- Modal post -->
-                        <div class="modal fade" id="ModalDeletePost" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+                        <div class="modal fade" id="ModalDeletePost" tabhttps://projet3.cpdmdev-mg.fr/="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -41,7 +41,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                        <a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deletePost&id=<?= $post->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                        <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deletePost&id=<?= $post->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ ob_start(); ?>
             <p class="comment-text"><?= $comment->getComment(); ?> </p>
             <div class="bottom-comment">
                 <div class="comment-date"><?= $comment->getComment_date(); ?></div>
-                <div class="comment-delete"><a href="http://localhost/CoursPHP/TPBlog/OCRP3/index.php?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>">Supprimer</a>
+                <div class="comment-delete"><a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>">Supprimer</a>
                 </div>
             </div>
 

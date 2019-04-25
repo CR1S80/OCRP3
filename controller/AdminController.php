@@ -109,7 +109,7 @@ class AdminController {
         $reportedComments = $commentManager->getReportedComments();
         
         
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=home');
+        header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home');
         
     }
     
@@ -123,7 +123,7 @@ class AdminController {
         $commentManager = new CommentManager();
         $reportedComments = $commentManager->getReportedComments();
         
-        header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=view&id='.$id);
+        header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=view&id='.$id);
         
     }
     
@@ -139,7 +139,7 @@ class AdminController {
        
        
        
-       header('Location: http://localhost/CoursPHP/TPBlog/OCRP3/?action=admin&adminAction=adminSpace');
+       header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=adminSpace');
        
        
     }
