@@ -25,11 +25,11 @@ ob_start();
 
 
         <div class="article-content">
-            <form class="form-add" action="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&amp;adminAction=add" method="post">
+            <form class="form-add" action="https://projet3.cpdmdev-mg.fr/?action=admin&amp;adminAction=add" method="post">
 
-                <input class="input-title" name="title" type="text" placeholder="Votre titre">
+                <input class="input-title" name="title" type="text" placeholder="Votre titre" required />
 
-                <textarea name="content" cols="20" placeholder="Entrez votre article"></textarea> 
+                <textarea name="content" cols="20" placeholder="Entrez votre article" required ></textarea> 
 
                 <div>
                     <button class="btn btn-primary submit" style="width: 100%;

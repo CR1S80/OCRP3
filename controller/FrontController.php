@@ -12,7 +12,7 @@ class FrontController {
 
     public function listPosts() {
         $manager = new PostManager();
-        $posts = $manager->getLastFivePosts();
+        $posts = $manager->getAllPosts();
 
         require('view/frontend/listPostsView.php');
     }
@@ -22,7 +22,7 @@ class FrontController {
         $post = $manager->getSinglePost($_GET['id']);
         
         if ($post->getId() === NULL) {
-            require 'view/frontend/404.php';;
+           require 'view/frontend/404.php';;
         } else {
                 
         $manager = new CommentManager();

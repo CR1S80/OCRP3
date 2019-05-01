@@ -25,7 +25,7 @@ ob_start(); ?>
     </div>
     
     <?php 
-     var_dump($post);
+     
     if (count($comments) === 0) { ?>
     
     <div class="comment-space" id="Reported-comment">
@@ -33,15 +33,15 @@ ob_start(); ?>
     </div><br><br> <?php } ?>
 
     <div class="form-comment" id="comment">
-        <form action="https://projet3.cpdmdev-mg.fr/?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
+        <form action="index.php/?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
             
             <div class="input-comment">
                 
-                <textarea cols="30" rows="5" type="text" id="comment" name="comment" placeholder="Votre commentaire..."></textarea>
+                <textarea cols="30" rows="5" type="text" id="comment" name="comment" placeholder="Votre commentaire..." required></textarea>
             </div>
             <div class="input-author">
                 
-                <input type="text" id="author" name="author" placeholder="Votre pseudo" />
+                <input type="text" id="author" name="author" placeholder="Votre pseudo" required />
             </div>
             <div>
                 <button class="btn btn-primary submit" style="    width: 100%;

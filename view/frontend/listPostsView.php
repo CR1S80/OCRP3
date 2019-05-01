@@ -1,6 +1,5 @@
-<?php $title = 'Mon blog'; ?>
-
-<?php ob_start(); ?>
+<?php $title = 'Mon blog'; 
+ob_start(); ?>
 
 <link href="public/css/style.css" rel="stylesheet">
 <body>
@@ -21,7 +20,7 @@
                 <a class="link-content" href="https://projet3.cpdmdev-mg.fr/?action=post&amp;id=<?= $data['id'] ?>">    
                 <div class="row-content">
                         <h2><?= $data['title'] ?></h2><em>ajouté le <?= $data['creation_date_fr'] ?></em>
-                        <p><?= substr($data['content'], 0, 450) . "..."; ?></p>
+                        <p><?= mb_substr($data['content'], 0, 450,'UTF8') . "..."; ?></p>
                         <a class="btn btn-secondary" href="https://projet3.cpdmdev-mg.fr/?action=post&amp;id=<?= $data['id'] ?>" role="button">Voir la suite &raquo;</a>
                     </div>
                 </a>
@@ -51,9 +50,9 @@
     
 </body>
 </html>
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();
 
-<?php require('template.php'); ?>
+require('template.php'); ?>
 
 
 

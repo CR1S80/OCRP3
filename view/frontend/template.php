@@ -1,3 +1,9 @@
+<?php
+error_reporting(E_ALL);
+			if (isset($_SESSION['admin']['email'])) {
+				header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home');
+        } else {
+            ?>   
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,16 +26,11 @@
 
 
     <header>
-        <?php
-        if (isset($_SESSION['admin']['email'])) {
-            header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home');
-        } else {
-            ?>       
+            
             <div class="container text-center bloc-title">
                 <a href="https://projet3.cpdmdev-mg.fr/?action=login" class="btn btn-primary admin-btn nav-admin" data-original-title="" title="">Connexion</a>
             </div>
-        <?php }
-        ?>
+        
         <div class="img-header">
             <img src="public/image/landscape-2124756_1920.jpg">
         </div>
@@ -53,3 +54,5 @@
     </body>
 
 </html>
+<?php }
+        ?>

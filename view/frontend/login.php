@@ -13,10 +13,10 @@ $title = 'Connectez vous'
         <h5 class="text-center">Veuillez vous connecter</h5>
         <form action="https://projet3.cpdmdev-mg.fr/?action=checklogin" method="post">
           <div class="form-group">
-              <input name="email" type="text" class="form-control" placeholder="Identifiant">
+              <input name="email" type="text" class="form-control" placeholder="Identifiant" required>
           </div>
           <div class="form-group">
-            <input name="password" type="password" class="form-control" placeholder="Mot de passe">
+            <input name="password" type="password" class="form-control" placeholder="Mot de passe" required>
           </div>
           <div class="form-group">
             <button class="btn btn-primary btn-block">Se connecter</button>

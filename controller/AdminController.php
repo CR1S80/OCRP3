@@ -39,7 +39,7 @@ class AdminController {
     
     public function home () {
         $postManager = new PostManager();
-        $posts = $postManager->getLastFivePosts();
+        $posts = $postManager->getAllPosts();
         $post = new PostEntity();
         
         require 'view/admin/frontend/listPostsAdmin.php';
@@ -109,7 +109,7 @@ class AdminController {
         $reportedComments = $commentManager->getReportedComments();
         
         
-        header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=home');
+        
         
     }
     
@@ -123,7 +123,7 @@ class AdminController {
         $commentManager = new CommentManager();
         $reportedComments = $commentManager->getReportedComments();
         
-        header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=view&id='.$id);
+        
         
     }
     
@@ -148,6 +148,6 @@ class AdminController {
    
 }
 
-?>
+
 
 

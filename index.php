@@ -26,7 +26,7 @@ if (isset($_GET['action'])) {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $frontController->post();
         } else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
+            require 'view/frontend/404.php';
         }
     } elseif ($_GET['action'] == 'addComment') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -42,7 +42,7 @@ if (isset($_GET['action'])) {
             } else {
                 echo 'Erreur : aucun identifiant de billet envoyé';
             }
-        }echo '404';
+        }
     } elseif ($_GET['action'] == 'admin') {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
 
@@ -57,33 +57,47 @@ if (isset($_GET['action'])) {
                     $adminController->editPostAdmin();
                 } 
                 elseif ($_GET['adminAction'] == 'editPost') {
+					if (isset($_GET['id']) && $_GET['id'] > 0) {
+						if (isset($_POST['content']) && isset($_POST['title'])) {
+							if (!empty(trim($_POST['content'])) && !empty(trim($_POST['title']))) {
 
                     $adminController->editPost($_GET['id'], $_POST['content'], $_POST['title']);
-                } elseif ($_GET['adminAction'] == 'addPost') {
+							}
+						}
+					}
+				}
+                 elseif ($_GET['adminAction'] == 'addPost') {
 
                     $postManager->postForm();
                 } elseif ($_GET['adminAction'] == 'add') {
+					if (isset($_POST['content']) && isset($_POST['title'])) {
+						if (!empty(trim($_POST['content'])) && !empty(trim($_POST['title']))) {
 
                     $adminController->addPost($_POST['title'], $_POST['content']);
-                } elseif ($_GET['adminAction'] == 'deletePost') {
-
-                    $adminController->deletePost($_GET['id']);
-                    header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=adminSpace');
+						}
+					}
+				} elseif ($_GET['adminAction'] == 'deletePost') {
+					if (isset($_GET['id']) && $_GET['id'] > 0) {
+						$adminController->deletePost($_GET['id']);
+						header('Location: https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=adminSpace');
+					}
+				
                 } elseif ($_GET['adminAction'] == 'adminSpace') {
 
                     $adminController->adminSpace();
                 } elseif ($_GET['adminAction'] == 'deleteComment') {
+					if (isset($_GET['id']) && $_GET['id'] > 0) {
 
-                    $commentManager->deleteComment($_GET['id']);
-                    
-                    
-                } elseif ($_GET['adminAction'] == 'validationComment') {
-                    $commentManager->validationComment($_GET['id']);
-                    
-                    
+						$commentManager->deleteComment($_GET['id']);
+					}
+				} elseif ($_GET['adminAction'] == 'validationComment') {
+					if (isset($_GET['id']) && $_GET['id'] > 0) {
+						$commentManager->validationComment($_GET['id']);
+					}
                 } 
             }
-        } else {
+        }
+		else {
 
             $securityController->loginForm();
         }
@@ -102,9 +116,11 @@ if (isset($_GET['action'])) {
         $securityController->logout();
         header('Location: https://projet3.cpdmdev-mg.fr/');
     } elseif ($_GET['action'] == 'reportComment') {
+		if (isset($_GET['id']) && $_GET['id'] > 0) {
                     $commentManager->setReportedComment($_GET['id']);
-                    //header('Location: ' . $_SERVER['HTTP_REFERER']'.);
+                    
                 }
-} else {
+	}
+	} else {
     $frontController->listPosts();
 }    

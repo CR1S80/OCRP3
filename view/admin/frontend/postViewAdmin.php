@@ -20,7 +20,7 @@ ob_start(); ?>
         <div class="article-content">
             <?= $post->getContent(); ?>
             <div>
-                    <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=edit&id=<?= $post->getId(); ?>"><button class="btn btn-warning edit" data-title="Edit" data-toggle="modal" data-target="#edit" >Éditer cet article</button></a>
+                    <a href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=edit&id=<?= $post->getId(); ?>"><button class="btn btn-warning edit" data-title="Edit" data-toggle="modal" data-target="#edit" >Éditer cet article</button></a>
                     <button type="button" class="btn btn-danger deletePost" data-toggle="modal" data-target="#ModalDeletePost">Supprimer cet article</button>
                 </div>
         </div>
@@ -41,7 +41,7 @@ ob_start(); ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                        <a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deletePost&id=<?= $post->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                                        <a href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deletePost&id=<?= $post->getId(); ?>"><button type="button" class="btn btn-danger">Supprimer</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -59,16 +59,34 @@ ob_start(); ?>
         <p>Il n'y a pas de commentaire pour le moment</p>
     </div> 
     <?php
-    }
+    } ?>
+	
+	<div class="form-comment" id="comment">
+        <form action="https://projet3.cpdmdev-mg.fr/?action=addComment&amp;id=<?= $post->getId(); ?>" method="post">
+            
+            <div class="input-comment">
+                
+                <textarea cols="30" rows="5" type="text" id="comment" name="comment" placeholder="Votre commentaire..."></textarea>
+            </div>
+            <div class="input-author">
+                
+                <input type="text" id="author" name="author" placeholder="Votre pseudo" />
+            </div>
+            <div>
+                <button class="btn btn-primary submit" style="    width: 100%;
+                                                                  margin: 15px 0 !important;" type="submit">Laisser un commentaire</button>
+            </div>
+        </form>
+    </div>
 
-    foreach ($comments as $comment): ?>
+    <?php foreach ($comments as $comment): ?>
     <div class="comment-space" id="Reported-comment">
         <div class="comment-author" id="comment-<?= $comment->getId(); ?>"><?= $comment->getAuthor(); ?> a commenté :</div>
             <hr>
             <p class="comment-text"><?= $comment->getComment(); ?> </p>
             <div class="bottom-comment">
                 <div class="comment-date"><?= $comment->getComment_date(); ?></div>
-                <div class="comment-delete"><a href="https://projet3.cpdmdev-mg.fr//https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>">Supprimer</a>
+                <div class="comment-delete"><a href="https://projet3.cpdmdev-mg.fr/?action=admin&adminAction=deleteComment&id=<?= $comment->getId(); ?>">Supprimer</a>
                 </div>
             </div>
 

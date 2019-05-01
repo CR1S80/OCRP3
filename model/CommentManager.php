@@ -76,8 +76,10 @@ class CommentManager {
     public function setReportedComment($commentId) {
         
         $comments = $this->db->prepare('UPDATE comments SET reports = reports + 1 WHERE ID=?');
+		
+		header('Location: ' . $_SERVER['HTTP_REFERER'] . '#comment'); 
         
-        \header('Location: ' . $_SERVER['HTTP_REFERER'] . '#comment-' . $commentId);
+        
         
         return $comments->execute(array($commentId));
         

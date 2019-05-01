@@ -62,6 +62,7 @@ h1.red{
 <div id="main">
 <div class="fof">
     <h1>Error 404</h1>
+	<h2>Cette page n'existe pas</h2>
     <h1 class="red">Redirection vers la pages d'acceuil en cours</h1>
 </div>
 </div>
